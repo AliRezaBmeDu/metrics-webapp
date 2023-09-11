@@ -1,5 +1,5 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+
 import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/Homepage';
@@ -14,8 +14,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' exact element={<Homepage />} />
-        <Route path='/details' exact element={<Stockpage />} />
+        <Route path="/" exact element={<Homepage />} />
+        <Route path="/details" exact element={<Stockpage />} />
       </Routes>
     </Router>
   );

@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const SingleStock = () => {
-  return (
-    <div>SingleStock</div>
-  )
-}
+const SingleStock = () => (
+  <div>SingleStock</div>
+);
 
-export default SingleStock
+export default SingleStock;

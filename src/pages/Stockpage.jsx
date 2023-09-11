@@ -1,12 +1,10 @@
 import React from 'react';
 import SingleStock from '../components/SingleStock';
 
-const Stockpage = () => {
-  return (
-    <div>
-        <SingleStock />
-    </div>
-  )
-}
+const Stockpage = () => (
+  <div>
+    <SingleStock />
+  </div>
+);
 
-export default Stockpage
+export default Stockpage;
