@@ -22,7 +22,7 @@ export const getStocks = createAsyncThunk('stocks/getStock', async () => {
   }
 });
 
-export const getStockDetail = createAsyncThunk('stocks/getStockDetail', async (name) => {
+export const getStockDetail = createAsyncThunk('stocks/details/getStockDetail', async (name) => {
     try {
       const response = 
       await fetch(`https://financialmodelingprep.com/api/v3/profile/${name}?apikey=${apiKey}`)
