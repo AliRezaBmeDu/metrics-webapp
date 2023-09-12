@@ -5,6 +5,7 @@ const initialState = {
   stockDetail: null,
   isLoading: true,
   stockDetailError: null,
+  loadingDetail: true,
 };
 
 const apiKey = 'd20b102fb7428e9fefc8a86fd6651a7c';
@@ -35,7 +36,9 @@ export const getStockDetail = createAsyncThunk('stocks/details/getStockDetail', 
 const stocksSlice = createSlice({
   name: 'stocks',
   initialState,
-  reducers: {},
+  reducers: {
+
+  },
   extraReducers: {
     [getStocks.pending]: (state) => {
       state.isLoading = true;
@@ -47,6 +50,9 @@ const stocksSlice = createSlice({
     },
     [getStocks.rejected]: (state) => {
       state.isLoading = false;
+    },
+    [getStockDetail.pending]: (state) => {
+      state.loadingDetail = true;
     },
     [getStockDetail.fulfilled]: (state, action) => {
       const stock = action.payload;

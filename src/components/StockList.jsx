@@ -14,13 +14,13 @@ const StockList = () => {
       <p>
         StockList Fetch Complete
       </p>
-      {stocks && stocks.map((result) => (
-        <ul key={result.symbol}>
+      {stocks && stocks.map((stock) => (
+        <ul key={stock.symbol}>
           <li>
-            {result.companyName}
+            {stock.companyName}
           </li>
           <li>
-            <Link to="/details">
+            <Link to={`/details/${stock.symbol}`}>
               <button type="button">See more Info</button>
             </Link>
           </li>

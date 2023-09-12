@@ -15,7 +15,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" exact element={<Homepage />} />
-        <Route path="/details" exact element={<Stockpage />} />
+        <Route path="/details/:symbol" exact element={<Stockpage />} />
       </Routes>
     </Router>
   );
