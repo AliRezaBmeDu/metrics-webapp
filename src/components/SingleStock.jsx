@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStockDetail } from '../redux/stocks/stocksSlice';
 
 const SingleStock = () => {
-  const { symbol } = useParams();
   const { stockDetail } = useSelector((store) => store.stocks);
+  const { symbol } = useParams();
+  console.log('symbol: ', symbol);
+
+  //   console.log('stock details: ', stockDetail);
+  const singleStock = stockDetail;
+
   const { loadingDetail } = useSelector((store) => store.stocks);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getStockDetail(symbol));
-  });
+  }, [dispatch]);
 
   if (loadingDetail) {
     return (
@@ -26,24 +31,24 @@ const SingleStock = () => {
   return (
     <div>
       <span>
-        {stockDetail.name}
+        {singleStock.name}
       </span>
       <span>
-        {stockDetail.symbol}
+        {singleStock.symbol}
       </span>
       <span>
-        {stockDetail.description}
+        {singleStock.description}
       </span>
       <span>
-        {stockDetail.mktCap}
+        {singleStock.mktCap}
       </span>
       <span>
-        {stockDetail.price}
+        {singleStock.price}
       </span>
       <span>
-        <Link to="/">
-          <button type="button">Go back</button>
-        </Link>
+        <button type="button">
+          <Link to="/">Go Back</Link>
+        </button>
       </span>
     </div>
   );

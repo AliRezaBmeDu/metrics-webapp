@@ -10,7 +10,8 @@ npx stylelint "**/*.{css,scss}"
 https://eslint.org/docs/latest/use/command-line-interface#fixing-problems
 https://stylelint.io/user-guide/options/
 
-apiKey = 'd20b102fb7428e9fefc8a86fd6651a7c';
+apiKey = 'd20b102fb7428e9fefc8a86fd6651a7c';(Obsolete)
+apiKey = 'fecdf9f28fa76d319c6c49812079eea9';
 
 
 ###########  INSTALL ##################

@@ -8,12 +8,13 @@ const initialState = {
   loadingDetail: true,
 };
 
-const apiKey = 'd20b102fb7428e9fefc8a86fd6651a7c';
+const apiKey = 'fecdf9f28fa76d319c6c49812079eea9';
 
 export const getStocks = createAsyncThunk('stocks/getStock', async () => {
   try {
     const response = await fetch(`https://financialmodelingprep.com/api/v3/stock-screener?limit=20&exchange=nyse,nasdaq,amex&priceMoreThan=100&marketCapLowerThan=5357210641370&isActivelyTrading=true&apikey=${apiKey}`);
     const output = response.json();
+    console.log(output);
     return output;
   } catch (error) {
     console.error('Error fetching data');
@@ -21,11 +22,11 @@ export const getStocks = createAsyncThunk('stocks/getStock', async () => {
   }
 });
 
-export const getStockDetail = createAsyncThunk('stocks/details/getStockDetail', async (symbol) => {
+export const getStockDetail = createAsyncThunk('stockDetail/getStockDetail', async (symbol) => {
   try {
     const response = await fetch(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${apiKey}`);
     const output = response.json();
-    console.log(output);
+    console.log('Is this printing?', output);
     return output;
   } catch (error) {
     console.error('Error fetching data');
@@ -56,9 +57,10 @@ const stocksSlice = createSlice({
     },
     [getStockDetail.fulfilled]: (state, action) => {
       const stock = action.payload;
+      console.log('The stock detail: ', stock);
       const {
         companyName, symbol, description, mktCap, image, price,
-      } = stock;
+      } = stock[0];
       const details = {
         name: companyName,
         symbol,
@@ -67,10 +69,13 @@ const stocksSlice = createSlice({
         image,
         price,
       };
+      console.log('Details to be displayed', details);
       state.stockDetail = details;
+      state.loadingDetail = false;
     },
     [getStockDetail.rejected]: (state) => {
       state.stockDetailError = 'Error loading data, please reload';
+      state.loadingDetail = false;
     },
   },
 });
