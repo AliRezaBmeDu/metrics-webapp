@@ -52,8 +52,9 @@ const stocksSlice = createSlice({
       state.isLoading = false;
       const stockList = action.payload;
       const uniqueStocks = stockList.reduce((accumulator, currentStock) => {
-        const existingStock = accumulator.find((stock) => 
-        stock.companyName === currentStock.companyName);
+        const existingStock = accumulator.find((stock) => (
+          stock.companyName === currentStock.companyName
+        ));
         if (!existingStock) {
           accumulator.push(currentStock);
         }

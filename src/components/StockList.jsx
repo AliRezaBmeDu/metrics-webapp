@@ -36,7 +36,7 @@ const StockList = () => {
           <img src={nyse} alt="nyse" />
           <img src={amex} alt="amex" />
         </div>
-        <div>
+        <div className="header-title">
           <p>US stock market</p>
         </div>
       </div>
@@ -46,7 +46,7 @@ const StockList = () => {
       <div className="stock-card-container">
         {stocks && stocks.map((stock) => (
           <div key={stock.symbol} className="stock-card">
-            <button type="button">
+            <button type="button" className="more-btn">
               <Link to={`/details/${stock.symbol}`}>
                 See more Info
               </Link>
