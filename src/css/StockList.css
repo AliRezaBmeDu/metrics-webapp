@@ -8,6 +8,7 @@
     margin: auto;
     display: flex;
     justify-content: space-between;
+    padding-inline: 1vw;
 }
 
 .logo-container {
@@ -20,14 +21,16 @@
 }
 
 .logo-container img {
-    width: 5%;
-    height: 5%;
+    width: 6rem;
+    height: 6rem;
 }
 
 .header-title {
     text-align: center;
     background-color: var(--secondary-color);
     color: var(--white-one);
+    width: 50%;
+    font-size: 3rem;
 }
 
 .stock-card-container {
@@ -43,7 +46,7 @@
     width: 45vw;
     height: 40vh;
     padding: 1% 1%;
-    padding-left: 2%;
+    padding-right: 2%;
     justify-content: space-between;
     align-items: flex-end;
     background-color: var(--primary-color);

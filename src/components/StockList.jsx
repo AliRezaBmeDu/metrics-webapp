@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/StockList.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import amex from '../assets/amex-logo.svg';
+import amex from '../assets/amex.png';
 import nasdaq from '../assets/Nasdaq-Logo.svg';
 import nyse from '../assets/NYSE-logo.svg';
 
