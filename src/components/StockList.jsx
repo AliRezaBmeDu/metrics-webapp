@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-// import { getStockDetail } from '../redux/stocks/stocksSlice';
+import amex from '../assets/amex-logo.svg';
+import nasdaq from '../assets/Nasdaq-Logo.svg';
+import nyse from '../assets/NYSE-logo.svg';
 
 const StockList = () => {
-  const { stocks } = useSelector((store) => store.stocks);
+  let { stocks } = useSelector((store) => store.stocks);
   const { isLoading } = useSelector((store) => store.stocks);
+  const { searchTerm } = useSelector((store) => store.stocks);
   console.log('isloading? ', isLoading);
 
   if (isLoading) {
@@ -16,24 +19,48 @@ const StockList = () => {
     );
   }
 
+  const filteredStocks = stocks.filter(
+    (stock) => stock.companyName.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+
+  stocks = filteredStocks;
+
+  console.log('filtered stocks: ', filteredStocks);
+
   return (
     <div>
-      <p>
-        StockList Fetch Complete
-      </p>
+      <div className="header-container">
+        <div className="logo-container">
+          <img src={nasdaq} alt="nasdaq" />
+          <img src={nyse} alt="nyse" />
+          <img src={amex} alt="amex" />
+        </div>
+        <div>
+          <p>US stock market</p>
+        </div>
+      </div>
+      <div>
+        <p>Stats By Stocks</p>
+      </div>
       {stocks && stocks.map((stock) => (
-        <ul key={stock.symbol}>
-          <li>
+        <div key={stock.symbol}>
+          <span>
             <p>{stock.companyName}</p>
-          </li>
-          <li>
+            <p>
+              Stock Exchange:
+              {' '}
+              {stock.exchange}
+            </p>
+            <p>
+
+            </p>
             <button type="button">
               <Link to={`/details/${stock.symbol}`}>
                 See more Info
               </Link>
             </button>
-          </li>
-        </ul>
+          </span>
+        </div>
       ))}
     </div>
   );

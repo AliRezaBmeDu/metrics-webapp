@@ -5,13 +5,13 @@ import { getStockDetail } from '../redux/stocks/stocksSlice';
 
 const SingleStock = () => {
   const { stockDetail } = useSelector((store) => store.stocks);
+  const { loadingDetail } = useSelector((store) => store.stocks);
   const { symbol } = useParams();
   console.log('symbol: ', symbol);
 
   //   console.log('stock details: ', stockDetail);
   const singleStock = stockDetail;
 
-  const { loadingDetail } = useSelector((store) => store.stocks);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getStockDetail(symbol));

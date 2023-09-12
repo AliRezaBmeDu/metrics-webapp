@@ -6,13 +6,14 @@ const initialState = {
   isLoading: true,
   stockDetailError: null,
   loadingDetail: true,
+  searchTerm: '',
 };
 
 const apiKey = 'fecdf9f28fa76d319c6c49812079eea9';
 
 export const getStocks = createAsyncThunk('stocks/getStock', async () => {
   try {
-    const response = await fetch(`https://financialmodelingprep.com/api/v3/stock-screener?limit=20&exchange=nyse,nasdaq,amex&priceMoreThan=100&marketCapLowerThan=5357210641370&isActivelyTrading=true&apikey=${apiKey}`);
+    const response = await fetch(`https://financialmodelingprep.com/api/v3/stock-screener?limit=50&exchange=nyse,nasdaq,amex&priceMoreThan=100&marketCapLowerThan=5357210641370&isActivelyTrading=true&apikey=${apiKey}`);
     const output = response.json();
     console.log(output);
     return output;
@@ -38,7 +39,10 @@ const stocksSlice = createSlice({
   name: 'stocks',
   initialState,
   reducers: {
-
+    setSearchTerm: (state, action) => {
+      state.searchTerm = action.payload;
+      console.log('search-term', state.searchTerm);
+    },
   },
   extraReducers: {
     [getStocks.pending]: (state) => {
@@ -47,7 +51,15 @@ const stocksSlice = createSlice({
     [getStocks.fulfilled]: (state, action) => {
       state.isLoading = false;
       const stockList = action.payload;
-      state.stocks = stockList;
+      const uniqueStocks = stockList.reduce((accumulator, currentStock) => {
+        const existingStock = accumulator.find((stock) => 
+        stock.companyName === currentStock.companyName);
+        if (!existingStock) {
+          accumulator.push(currentStock);
+        }
+        return accumulator;
+      }, []);
+      state.stocks = uniqueStocks;
     },
     [getStocks.rejected]: (state) => {
       state.isLoading = false;
@@ -80,4 +92,5 @@ const stocksSlice = createSlice({
   },
 });
 
+export const { setSearchTerm } = stocksSlice.actions;
 export default stocksSlice.reducer;
