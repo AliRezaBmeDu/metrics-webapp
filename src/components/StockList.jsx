@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/StockList.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import amex from '../assets/amex-logo.svg';
@@ -42,26 +43,23 @@ const StockList = () => {
       <div>
         <p>Stats By Stocks</p>
       </div>
-      {stocks && stocks.map((stock) => (
-        <div key={stock.symbol}>
-          <span>
-            <p>{stock.companyName}</p>
-            <p>
-              Stock Exchange:
-              {' '}
-              {stock.exchange}
-            </p>
-            <p>
-
-            </p>
+      <div className="stock-card-container">
+        {stocks && stocks.map((stock) => (
+          <div key={stock.symbol} className="stock-card">
             <button type="button">
               <Link to={`/details/${stock.symbol}`}>
                 See more Info
               </Link>
             </button>
-          </span>
-        </div>
-      ))}
+            <span className="stock-card-info">
+              <p>{stock.companyName}</p>
+              <p>
+                {stock.exchange}
+              </p>
+            </span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

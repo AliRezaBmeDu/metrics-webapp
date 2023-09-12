@@ -1,0 +1,11 @@
+.header-container {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-container {
+    width: 50%;
+    background-color: blue;
+}
+
