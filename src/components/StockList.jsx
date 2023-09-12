@@ -52,7 +52,9 @@ const StockList = () => {
               </Link>
             </button>
             <span className="stock-card-info">
-              <p>{stock.companyName}</p>
+              <p>
+                {stock.companyName.length <= 30 ? stock.companyName : stock.symbol}
+              </p>
               <p>
                 {stock.exchange}
               </p>

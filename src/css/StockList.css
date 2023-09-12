@@ -40,9 +40,22 @@
 .stock-card {
     display: flex;
     flex-direction: column;
-    padding: 2%;
+    width: 45vw;
+    height: 40vh;
+    padding: 1% 1%;
+    padding-left: 2%;
     justify-content: space-between;
     align-items: flex-end;
+    background-color: var(--primary-color);
+    color: var(--white-one);
+}
+
+.stock-card:nth-child(4n) {
+    background-color: var(--secondary-color);
+}
+
+.stock-card:nth-child(4n+1) {
+    background-color: var(--secondary-color);
 }
 
 .more-btn {
@@ -52,6 +65,17 @@
 .stock-card-info {
     display: flex;
     flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.8rem;
 }
 
+.stock-card-info p:first-child {
+    font-size: 1.3rem;
+    margin-bottom: -0.5rem;
+    align-self: flex-end;
+}
+
+.stock-card-info p:last-child {
+    align-self: flex-end;
+}
 
