@@ -12,8 +12,15 @@
     justify-content: space-between;
     align-items: center;
     padding-inline: 2%;
+    padding-top: 1rem;
     height: 10vw;
     width: 95.89vw;
+}
+
+.bi {
+    color: var(--white-one);
+    background-color: transparent;
+    font-size: 2rem;
 }
 
 .title {
@@ -21,8 +28,15 @@
     color: var(--white-one);
 }
 
+.icon-holder {
+    display: flex;
+    gap: 1rem;
+}
+
 .bi {
     color: var(--white-one);
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: var(--root-font);
+    margin-right: 2rem;
+    margin-top: -2rem;
 }

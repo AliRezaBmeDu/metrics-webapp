@@ -28,6 +28,7 @@
     margin: auto;
     display: flex;
     flex-direction: column;
+    /* width: var(--container-width); */
 }
 
 .info-container div {
@@ -35,7 +36,7 @@
     background-color: var(--secondary-color);
     display: flex;
     justify-content: space-between;
-
+    padding-inline: 2%;
 }
 
 .info-container div:nth-child(2n) {
@@ -52,4 +53,5 @@
 a {
     text-decoration: none;
     color: orange;
+    overflow-wrap: break-word;
 }

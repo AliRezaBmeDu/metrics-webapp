@@ -66,21 +66,29 @@ const SingleStock = () => {
           <p>{singleStock.price}</p>
         </div>
         <div>
-          <p>Volume Average</p>
-          <p>{singleStock.volAvg}</p>
+          <p>Average Volume</p>
+          <p>{singleStock.volAvg ? singleStock.volAvg : 'N/A'}</p>
         </div>
         <div>
           <p>Sector</p>
-          <p>{singleStock.sector}</p>
+          <p>{singleStock.sector ? singleStock.sector : 'N/A'}</p>
         </div>
         <div>
           <p>CEO</p>
-          <p>{singleStock.ceo}</p>
+          <p>
+            {singleStock.ceo ? singleStock.ceo : 'N/A'}
+          </p>
         </div>
         <div>
           <p>Official Site</p>
           <p>
-            <a href={singleStock.website}>{singleStock.website}</a>
+            {
+            singleStock.website ? (
+              <a href={singleStock.website} target="_blank" rel="noreferrer">
+                {singleStock.website}
+              </a>
+            ) : 'N/A'
+            }
           </p>
         </div>
       </div>
