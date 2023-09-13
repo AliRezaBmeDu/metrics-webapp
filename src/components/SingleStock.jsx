@@ -92,11 +92,6 @@ const SingleStock = () => {
           </p>
         </div>
       </div>
-      <span>
-        <button type="button">
-          <Link to="/">Go Back</Link>
-        </button>
-      </span>
     </div>
   );
 };

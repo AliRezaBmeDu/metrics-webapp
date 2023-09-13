@@ -36,7 +36,12 @@
 .bi {
     color: var(--white-one);
     background-color: transparent;
-    font-size: var(--root-font);
+    font-size: calc(0.5*var(--root-font));
+    margin-right: 0.5rem;
+}
+
+.bi-arrow-left-circle {
+    font-size: calc(0.8*var(--root-font));
     margin-right: 2rem;
     margin-top: -2rem;
 }
