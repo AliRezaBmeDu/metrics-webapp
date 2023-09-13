@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setSearchTerm } from '../redux/stocks/stocksSlice';
 
-const SearchBar = () => {
+const SearchStock = () => {
   const dispatch = useDispatch();
   const handleChange = (e) => {
     console.log('What is it? ', e.target.value);
@@ -20,4 +20,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default SearchStock;

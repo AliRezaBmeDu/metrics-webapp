@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/StockList.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import SearchBar from './SearchBar';
+import SearchStock from './SearchStock';
 import amex from '../assets/amex.png';
 import nasdaq from '../assets/Nasdaq-Logo.svg';
 import nyse from '../assets/NYSE-logo.svg';
@@ -43,7 +43,7 @@ const StockList = () => {
       </div>
       <div className="mid-section">
         <p className="stats-text">Stats By Stocks</p>
-        <SearchBar />
+        <SearchStock />
       </div>
       <div className="stock-card-container">
         {stocks && stocks.map((stock) => (
