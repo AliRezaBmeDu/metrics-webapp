@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import amex from '../assets/amex.png';
 import nasdaq from '../assets/Nasdaq-Logo.svg';
 import nyse from '../assets/NYSE-logo.svg';
+// import defaultImage from '../assets/amex-logo.svg';
 
 const StockList = () => {
   let { stocks } = useSelector((store) => store.stocks);
@@ -37,7 +38,7 @@ const StockList = () => {
           <img src={amex} alt="amex" />
         </div>
         <div className="header-title">
-          <p>US stock market</p>
+          <p className="page-title">US capital market</p>
         </div>
       </div>
       <div>
@@ -45,15 +46,24 @@ const StockList = () => {
       </div>
       <div className="stock-card-container">
         {stocks && stocks.map((stock) => (
-          <div key={stock.symbol} className="stock-card">
+          <div
+            key={stock.symbol}
+            className={`stock-card ${stock.exchange.includes('NASDAQ')
+              ? 'nasdaq-bg' : ''} ${stock.exchange.includes('New')
+              ? 'nyse-bg' : ''} ${stock.exchange.includes('AMEX')
+              ? 'amex-bg' : ''}`}
+          >
             <button type="button" className="more-btn">
               <Link to={`/details/${stock.symbol}`}>
-                See more Info
+                <i className="bi bi-arrow-right-circle" />
               </Link>
             </button>
             <span className="stock-card-info">
               <p>
-                {stock.companyName.length <= 30 ? stock.companyName : stock.symbol}
+                {
+                  stock.companyName.length <= 25
+                    ? stock.companyName : stock.companyName.slice(0, 18)
+                }
               </p>
               <p>
                 {stock.exchange}

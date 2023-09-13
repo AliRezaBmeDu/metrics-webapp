@@ -2,35 +2,43 @@
     --primary-color: rgb(230, 40, 129);
     --secondary-color: rgb(199, 20, 104);
     --white-one: #f5f5f5;
+    --root-font: min(8vw,10vh);
+    --card-font: calc(0.5*var(--root-font));
+    --image-size: min(15vw,18vh);
 }
 
 .header-container {
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding-inline: 1vw;
+    background-color: var(--secondary-color);
+    /* padding-inline: 1vw; */
+    height: 40vh;
+    width: 96vw;
 }
 
 .logo-container {
-    width: 50%;
+    width: 45vw;
     background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    padding: 1.5rem;
 }
 
 .logo-container img {
-    width: 6rem;
-    height: 6rem;
+    width: var(--image-size);
+    height: var(--image-size);
 }
 
 .header-title {
     text-align: center;
-    background-color: var(--secondary-color);
     color: var(--white-one);
-    width: 50%;
-    font-size: 3rem;
+    width: 45vw;
+    font-size: var(--root-font);
+    align-self: center;
+    padding-inline: 1rem;
 }
 
 .stock-card-container {
@@ -45,12 +53,14 @@
     flex-direction: column;
     width: 45vw;
     height: 40vh;
-    padding: 1% 1%;
-    padding-right: 2%;
+    padding: 2% 2% 1% 1%;
     justify-content: space-between;
     align-items: flex-end;
     background-color: var(--primary-color);
     color: var(--white-one);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
 }
 
 .stock-card:nth-child(4n) {
@@ -62,23 +72,33 @@
 }
 
 .more-btn {
+    color: transparent;
+    border: none;
+    background-color: transparent;
+}
+
+.bi {
     color: var(--white-one);
+    background-color: transparent;
+    font-size: 2rem;
 }
 
 .stock-card-info {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
+    height: 50%;
 }
 
 .stock-card-info p:first-child {
-    font-size: 1.3rem;
+    font-size: var(--card-font);
     margin-bottom: -0.5rem;
     align-self: flex-end;
 }
 
 .stock-card-info p:last-child {
     align-self: flex-end;
+    font-size: calc(0.7*var(--card-font));
 }
 
