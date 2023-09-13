@@ -3,7 +3,7 @@ import StockList from '../components/StockList';
 import Navbar from '../components/Navbar';
 
 const Homepage = () => (
-  <div>
+  <div className="homepage">
     <Navbar />
     <StockList />
   </div>

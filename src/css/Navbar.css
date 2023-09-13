@@ -7,15 +7,22 @@
 }
 
 .nav-item-holder {
-    background-color: var(--primary-color);
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-inline: 2%;
     height: 10vw;
+    width: 95.89vw;
+}
+
+.title {
+    font-size: var(--root-font);
+    color: var(--white-one);
 }
 
 .bi {
     color: var(--white-one);
     background-color: transparent;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }

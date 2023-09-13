@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import amex from '../assets/amex.png';
 import nasdaq from '../assets/Nasdaq-Logo.svg';
 import nyse from '../assets/NYSE-logo.svg';
-import SearchBar from './SearchBar';
 
 const StockList = () => {
   let { stocks } = useSelector((store) => store.stocks);
@@ -42,12 +41,7 @@ const StockList = () => {
         </div>
       </div>
       <div className="mid-section">
-        <div className="stats">
-          <p className="stats-text">Stats By Stocks</p>
-        </div>
-        <div className="search-it">
-          <SearchBar className="searchbar" />
-        </div>
+        <p className="stats-text">Stats By Stocks</p>
       </div>
       <div className="stock-card-container">
         {stocks && stocks.map((stock) => (

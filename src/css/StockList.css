@@ -42,16 +42,9 @@
 }
 
 .mid-section {
-    display: flex;
-    justify-content: space-between;
     width: var(--top-width);
+    padding-inline-start: 2%;
     margin: auto;
-}
-
-.stats {
-    text-align: center;
-    background-color: var(--secondary-color);
-    width: 50%;
 }
 
 .stats-text {
