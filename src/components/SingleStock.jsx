@@ -1,15 +1,24 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStockDetail } from '../redux/stocks/stocksSlice';
+import '../css/SingleStock.css';
+import demologo from '../assets/demologo2.png';
 
 const SingleStock = () => {
   const { stockDetail } = useSelector((store) => store.stocks);
   const { loadingDetail } = useSelector((store) => store.stocks);
+  const [imgLoadError, setImgLoadError] = useState(false);
+
+  const handleImgLoad = () => {
+    console.log('This is printing');
+    setImgLoadError(true);
+    console.log('imgLoadError: ', imgLoadError);
+  };
+
   const { symbol } = useParams();
   console.log('symbol: ', symbol);
 
-  //   console.log('stock details: ', stockDetail);
   const singleStock = stockDetail;
 
   const dispatch = useDispatch();
@@ -28,15 +37,19 @@ const SingleStock = () => {
     );
   }
 
-  const { image } = singleStock;
-  console.log('Is this correct url: ', image);
-
   return (
-    <div className="single-title">
-      <div>
-        <img src={singleStock.image} alt="logo" />
-        <p>
-          {singleStock.symbol}
+    <div className="single-stock">
+      <div className="overhead">
+        <img
+          src={(imgLoadError)
+            ? demologo : singleStock.image}
+          alt="logo"
+          className="logo"
+          onError={handleImgLoad}
+        />
+        <p className="overhead-symbol">
+          &copy;
+          {symbol}
         </p>
       </div>
       <div className="info-container">

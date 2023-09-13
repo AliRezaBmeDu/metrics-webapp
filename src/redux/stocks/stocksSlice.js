@@ -13,7 +13,7 @@ const apiKey = 'fecdf9f28fa76d319c6c49812079eea9';
 
 export const getStocks = createAsyncThunk('stocks/getStock', async () => {
   try {
-    const response = await fetch(`https://financialmodelingprep.com/api/v3/stock-screener?limit=50&exchange=nyse,nasdaq,amex&priceMoreThan=100&marketCapLowerThan=5357210641370&isActivelyTrading=true&apikey=${apiKey}`);
+    const response = await fetch(`https://financialmodelingprep.com/api/v3/stock-screener?limit=100&exchange=nyse,nasdaq,amex&priceMoreThan=100&marketCapLowerThan=5357210641370&isActivelyTrading=true&apikey=${apiKey}`);
     const output = response.json();
     console.log(output);
     return output;
@@ -55,7 +55,7 @@ const stocksSlice = createSlice({
         const existingStock = accumulator.find((stock) => (
           stock.companyName === currentStock.companyName
         ));
-        if (!existingStock) {
+        if (!existingStock && currentStock.country) {
           accumulator.push(currentStock);
         }
         return accumulator;
