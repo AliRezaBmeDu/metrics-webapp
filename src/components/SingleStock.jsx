@@ -28,23 +28,49 @@ const SingleStock = () => {
     );
   }
 
+  const { image } = singleStock;
+  console.log('Is this correct url: ', image);
+
   return (
-    <div>
-      <span>
-        {singleStock.name}
-      </span>
-      <span>
-        {singleStock.symbol}
-      </span>
-      <span>
-        {singleStock.description}
-      </span>
-      <span>
-        {singleStock.mktCap}
-      </span>
-      <span>
-        {singleStock.price}
-      </span>
+    <div className="single-title">
+      <div>
+        <img src={singleStock.image} alt="logo" />
+        <p>
+          {singleStock.symbol}
+        </p>
+      </div>
+      <div className="info-container">
+        <div>
+          <p>Company Name</p>
+          <p>{singleStock.companyName}</p>
+        </div>
+        <div>
+          <p>Market Cap</p>
+          <p>{singleStock.mktCap}</p>
+        </div>
+        <div>
+          <p>Current Price</p>
+          <p>{singleStock.price}</p>
+        </div>
+        <div>
+          <p>Volume Average</p>
+          <p>{singleStock.volAvg}</p>
+        </div>
+        <div>
+          <p>Sector</p>
+          <p>{singleStock.sector}</p>
+        </div>
+        <div>
+          <p>CEO</p>
+          <p>{singleStock.ceo}</p>
+        </div>
+        <div>
+          <p>Official Site</p>
+          <p>
+            <a href={singleStock.website}>{singleStock.website}</a>
+          </p>
+        </div>
+      </div>
       <span>
         <button type="button">
           <Link to="/">Go Back</Link>

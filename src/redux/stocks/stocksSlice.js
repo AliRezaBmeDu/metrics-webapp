@@ -72,17 +72,25 @@ const stocksSlice = createSlice({
       const stock = action.payload;
       console.log('The stock detail: ', stock);
       const {
-        companyName, symbol, description, mktCap, image, price,
+        companyName,
+        mktCap,
+        price,
+        volAvg,
+        image,
+        sector,
+        ceo,
+        website,
       } = stock[0];
       const details = {
-        name: companyName,
-        symbol,
-        description,
-        mktCap,
+        companyName,
         image,
+        mktCap,
         price,
+        volAvg,
+        sector,
+        ceo,
+        website,
       };
-      console.log('Details to be displayed', details);
       state.stockDetail = details;
       state.loadingDetail = false;
     },
