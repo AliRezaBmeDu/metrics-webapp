@@ -1,10 +1,10 @@
 import React from 'react';
 import StockList from '../components/StockList';
-import SearchBar from '../components/SearchBar';
+import Navbar from '../components/Navbar';
 
 const Homepage = () => (
   <div>
-    <SearchBar />
+    <Navbar />
     <StockList />
   </div>
 );
