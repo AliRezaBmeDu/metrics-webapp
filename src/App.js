@@ -1,12 +1,23 @@
-import React from 'react';
-import StockList from './components/StockList';
+import React, { useEffect } from 'react';
+import './App.css';
+import { useDispatch } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './pages/Homepage';
+import Stockpage from './pages/Stockpage';
+import { getStocks } from './redux/stocks/stocksSlice';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getStocks());
+  }, [dispatch]);
   return (
-    <div className="App">
-      This is metrics application
-      <StockList />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" exact element={<Homepage />} />
+        <Route path="/details/:symbol" exact element={<Stockpage />} />
+      </Routes>
+    </Router>
   );
 }
 
