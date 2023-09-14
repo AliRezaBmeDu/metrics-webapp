@@ -14,6 +14,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
+  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -25,7 +26,7 @@
 
 # 📖 US-Stocks <a name="about-project"></a>
 
-**US-Stocks** is a mobile web application designed to serve as a infomation provider for the stocks of NASDAQ, NYSE and AMEX. It offers two main pages, one dedicated to display the cards of  various stocks available through the stock-exchanges aforementioned, and the other focused on giving details on particular stock. Users of this application can navigate the pages by using the state-of-the-art designed buttons.
+**US-Stocks** is a mobile web application designed to serve as a infomation provider for the stocks of NASDAQ, NYSE and AMEX or in other words American capital market. It offers two main pages, one dedicated to display the cards of  various stocks available through the stock-exchanges aforementioned, and the other focused on giving details on particular stock. Users of this application can navigate the pages by using the state-of-the-art designed buttons.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -58,6 +59,13 @@
 - **Comprehensible buttons to navigate around pages**
 - **Thematic color**
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+- [video link]()
+
+
+- [Live Demo Link]()
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
