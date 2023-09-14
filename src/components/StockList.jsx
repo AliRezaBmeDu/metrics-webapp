@@ -11,7 +11,6 @@ const StockList = () => {
   let { stocks } = useSelector((store) => store.stocks);
   const { isLoading } = useSelector((store) => store.stocks);
   const { searchTerm } = useSelector((store) => store.stocks);
-  console.log('isloading? ', isLoading);
 
   if (isLoading) {
     return (
@@ -26,8 +25,6 @@ const StockList = () => {
   );
 
   stocks = filteredStocks;
-
-  console.log('filtered stocks: ', filteredStocks);
 
   return (
     <div>
@@ -53,6 +50,7 @@ const StockList = () => {
             style={{
               backgroundImage: `url(https://financialmodelingprep.com/image-stock/${stock.symbol}.png)`,
             }}
+            data-testid="stock"
           >
             <button type="button" className="more-btn">
               <Link to={`/details/${stock.symbol}`}>
