@@ -36,9 +36,9 @@ describe('SingleStock Component', () => {
     render(
       <Provider store={store}>
         <MemoryRouter initialEntries={['/stocks/TEST']}>
-            <SingleStock />
+          <SingleStock />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     // Wait for the component to load
@@ -71,12 +71,11 @@ describe('SingleStock Component', () => {
     render(
       <Provider store={store}>
         <MemoryRouter initialEntries={['/stocks/TEST']}>
-            <SingleStock />
+          <SingleStock />
         </MemoryRouter>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByTestId('stockDetail')).toHaveTextContent('Loading...please wait');
   });
-
 });

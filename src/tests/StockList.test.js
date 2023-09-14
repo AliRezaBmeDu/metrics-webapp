@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import StockList from '../components/StockList';
 import { MemoryRouter } from 'react-router-dom';
+import StockList from '../components/StockList';
 
 // Create a mock dataset
 const stocks = [
@@ -23,10 +23,12 @@ const reduxMockStore = configureMockStore();
 
 describe('StockList', () => {
   it('should render loading message when isLoading is true', () => {
-    const initialState = { stocks: { 
+    const initialState = {
+      stocks: {
         stocks,
         isLoading: true,
-     } };
+      },
+    };
     const store = reduxMockStore(initialState);
     // Render the component inside the Provider with the mock store
     render(
@@ -39,16 +41,18 @@ describe('StockList', () => {
   });
 
   it('should render stocks when isLoading is false', () => {
-    const initialState2 = { stocks: { 
+    const initialState2 = {
+      stocks: {
         stocks,
         isLoading: false,
         searchTerm: '',
-     } };
+      },
+    };
     const store = reduxMockStore(initialState2);
     render(
       <Provider store={store}>
         <MemoryRouter>
-            <StockList />
+          <StockList />
         </MemoryRouter>
       </Provider>,
     );
@@ -62,16 +66,18 @@ describe('StockList', () => {
 
   // Test the filter function by using the search term
   it('should filter stocks according to the search term', () => {
-    const initialState2 = { stocks: { 
+    const initialState2 = {
+      stocks: {
         stocks,
         isLoading: false,
         searchTerm: 'Ap',
-     } };
+      },
+    };
     const store = reduxMockStore(initialState2);
     render(
       <Provider store={store}>
         <MemoryRouter>
-            <StockList />
+          <StockList />
         </MemoryRouter>
       </Provider>,
     );
