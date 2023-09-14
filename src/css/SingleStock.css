@@ -36,10 +36,6 @@
   align-items: center;
 }
 
-.overhead-symbol p:first-child {
-  margin-bottom: -1%;
-}
-
 .info-header {
   color: var(--white-one);
   font-size: var(--card-font);
@@ -54,7 +50,6 @@
 }
 
 .info-container div {
-  /* width: var(--container-width); */
   background-color: var(--secondary-color);
   display: flex;
   justify-content: space-between;
@@ -66,10 +61,13 @@
 }
 
 .info-container div p {
-  /* text-align: center; */
   width: 50%;
   color: var(--white-one);
   font-size: var(--card-font);
+}
+
+.overhead-symbol p:first-child {
+  margin-bottom: -1%;
 }
 
 .info-container div p:last-child {
