@@ -28,7 +28,7 @@ const SingleStock = () => {
 
   if (loadingDetail) {
     return (
-      <div>
+      <div data-testid="stockDetail">
         Loading...please wait
         <Link to="/">
           <button type="button">Go back</button>
@@ -38,7 +38,7 @@ const SingleStock = () => {
   }
 
   return (
-    <div className="single-stock">
+    <div className="single-stock" data-testid="stockDetail">
       <div className="overhead">
         <img
           src={(imgLoadError)
