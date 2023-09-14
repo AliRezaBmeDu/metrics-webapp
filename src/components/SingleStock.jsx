@@ -11,16 +11,11 @@ const SingleStock = () => {
   const [imgLoadError, setImgLoadError] = useState(false);
 
   const handleImgLoad = () => {
-    console.log('This is printing');
     setImgLoadError(true);
-    console.log('imgLoadError: ', imgLoadError);
   };
 
   const { symbol } = useParams();
-  console.log('symbol: ', symbol);
-
   const singleStock = stockDetail;
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getStockDetail(symbol));
@@ -40,17 +35,22 @@ const SingleStock = () => {
   return (
     <div className="single-stock" data-testid="stockDetail">
       <div className="overhead">
-        <img
-          src={(imgLoadError)
-            ? demologo : singleStock.image}
-          alt="logo"
-          className="logo"
-          onError={handleImgLoad}
-        />
-        <p className="overhead-symbol">
-          &copy;
-          {symbol}
-        </p>
+        <div className="logo-span">
+          <img
+            src={(imgLoadError)
+              ? demologo : singleStock.image}
+            alt="logo"
+            className="logo"
+            onError={handleImgLoad}
+          />
+        </div>
+        <div className="overhead-symbol">
+          <p>{singleStock.companyName}</p>
+          <p>{singleStock.price}</p>
+        </div>
+      </div>
+      <div className="info-header">
+        <p>More Information about the stock</p>
       </div>
       <div className="info-container">
         <div>

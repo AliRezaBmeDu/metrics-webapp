@@ -5,7 +5,6 @@ import { setSearchTerm } from '../redux/stocks/stocksSlice';
 const SearchStock = () => {
   const dispatch = useDispatch();
   const handleChange = (e) => {
-    console.log('What is it? ', e.target.value);
     dispatch(setSearchTerm(e.target.value));
   };
   return (

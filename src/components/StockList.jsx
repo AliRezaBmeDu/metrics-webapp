@@ -27,7 +27,7 @@ const StockList = () => {
   stocks = filteredStocks;
 
   return (
-    <div>
+    <div className="stocklist-container">
       <div className="header-container">
         <div className="logo-container">
           <img src={nasdaq} alt="nasdaq" />
@@ -65,7 +65,9 @@ const StockList = () => {
                 }
               </p>
               <p>
-                {stock.exchange}
+                price:
+                {' '}
+                {stock.price}
               </p>
             </span>
           </div>

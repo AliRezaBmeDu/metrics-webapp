@@ -11,25 +11,46 @@
 .overhead {
   display: flex;
   justify-content: space-around;
-  padding-top: 8%;
+  align-items: center;
+  background-color: var(--secondary-color);
+}
+
+.logo-span {
+  width: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
   height: var(--image-size);
   width: var(--image-size);
+  margin: auto;
 }
 
 .overhead-symbol {
-  font-size: var(--root-font);
+  font-size: var(--card-font);
   color: var(--white-one);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overhead-symbol p:first-child {
+  margin-bottom: -1%;
+}
+
+.info-header {
+  color: var(--white-one);
+  font-size: var(--card-font);
+  background-color: var(--primary-color);
+  padding: 1% 3%;
 }
 
 .info-container {
   margin: auto;
   display: flex;
   flex-direction: column;
-
-  /* width: var(--container-width); */
 }
 
 .info-container div {
@@ -37,7 +58,7 @@
   background-color: var(--secondary-color);
   display: flex;
   justify-content: space-between;
-  padding-inline: 2%;
+  padding-inline: 3%;
 }
 
 .info-container div:nth-child(2n) {
@@ -45,10 +66,14 @@
 }
 
 .info-container div p {
-  text-align: center;
+  /* text-align: center; */
   width: 50%;
   color: var(--white-one);
   font-size: var(--card-font);
+}
+
+.info-container div p:last-child {
+  text-align: right;
 }
 
 a {

@@ -11,15 +11,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 2%;
+  padding-inline: 3%;
   padding-top: 1rem;
+  padding-bottom: 1rem;
   height: 10vw;
-  width: 95.89vw;
+  max-width: 95.89vw;
 }
 
 .title {
   font-size: var(--root-font);
   color: var(--white-one);
+}
+
+.back-btn {
+  color: transparent;
+  border: none;
+  background-color: transparent;
 }
 
 .icon-holder {

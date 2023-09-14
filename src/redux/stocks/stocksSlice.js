@@ -15,7 +15,6 @@ export const getStocks = createAsyncThunk('stocks/getStock', async () => {
   try {
     const response = await fetch(`https://financialmodelingprep.com/api/v3/stock-screener?limit=100&exchange=nyse,nasdaq,amex&priceMoreThan=100&marketCapLowerThan=5357210641370&isActivelyTrading=true&apikey=${apiKey}`);
     const output = response.json();
-    console.log(output);
     return output;
   } catch (error) {
     console.error('Error fetching data');
@@ -27,7 +26,6 @@ export const getStockDetail = createAsyncThunk('stockDetail/getStockDetail', asy
   try {
     const response = await fetch(`https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${apiKey}`);
     const output = response.json();
-    console.log('Is this printing?', output);
     return output;
   } catch (error) {
     console.error('Error fetching data');
@@ -41,7 +39,6 @@ const stocksSlice = createSlice({
   reducers: {
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
-      console.log('search-term', state.searchTerm);
     },
   },
   extraReducers: {
@@ -70,7 +67,6 @@ const stocksSlice = createSlice({
     },
     [getStockDetail.fulfilled]: (state, action) => {
       const stock = action.payload;
-      console.log('The stock detail: ', stock);
       const {
         companyName,
         mktCap,

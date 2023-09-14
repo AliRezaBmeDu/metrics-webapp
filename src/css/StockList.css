@@ -8,26 +8,28 @@
   --top-width: 95.89vw;
 }
 
+.stocklist-container {
+  max-width: var(--top-width);
+  margin: auto;
+}
+
 .header-container {
   margin: auto;
-  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   background-color: var(--primary-color);
-
-  /* padding-inline: 1vw; */
   height: 40vh;
   width: var(--top-width);
 }
 
 .logo-container {
-  width: 50%;
   background-color: var(--secondary-color);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 2%;
+  width: 50%;
 }
 
 .logo-container img {
@@ -38,7 +40,6 @@
 .title-container {
   text-align: center;
   color: var(--white-one);
-  width: 50%;
   font-size: var(--root-font);
   padding-inline: 1rem;
   display: flex;
@@ -50,9 +51,8 @@
 
 .mid-section {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  width: var(--top-width);
   padding-inline: 2%;
   padding-inline-end: 5%;
   margin: auto;
@@ -61,6 +61,7 @@
 .stats-text {
   font-size: var(--card-font);
   color: var(--white-one);
+  align-self: flex-start;
 }
 
 .stock-card-container {
