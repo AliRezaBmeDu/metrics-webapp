@@ -62,7 +62,7 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-- [video link]()
+- [video link](https://www.loom.com/share/Displaying-a-Web-Application-Built-with-React-c5807fea10e84b28b32d58c7e8bbf800?sid=6176e9c1-ab60-4346-89da-d8b14d4f5841)
 
 
 - [Live Demo Link](https://us-stocks.onrender.com/)
