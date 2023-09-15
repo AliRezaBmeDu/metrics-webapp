@@ -1,0 +1,127 @@
+:root {
+  --primary-color: rgb(230, 40, 129);
+  --secondary-color: rgb(207, 37, 117);
+  --white-one: #f5f5f5;
+  --root-font: min(6vw, 14vh);
+  --card-font: calc(0.45 * var(--root-font));
+  --image-size: min(5vw, 10vh);
+  --top-width: 95.89vw;
+}
+
+.stocklist-container {
+  max-width: var(--top-width);
+  margin: auto;
+}
+
+.header-container {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  height: 40vh;
+  width: var(--top-width);
+}
+
+.logo-container {
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  width: 50%;
+}
+
+.logo-container img {
+  width: var(--image-size);
+  height: var(--image-size);
+}
+
+.title-container {
+  text-align: center;
+  color: var(--white-one);
+  font-size: var(--root-font);
+  padding-inline: 1rem;
+  display: flex;
+}
+
+.page-title {
+  align-self: center;
+}
+
+.mid-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2%;
+  padding-inline-end: 5%;
+  margin: auto;
+}
+
+.stats-text {
+  font-size: var(--card-font);
+  color: var(--white-one);
+  align-self: flex-start;
+}
+
+.stock-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.stock-card {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  height: 40vh;
+  padding: 2% 2% 1% 1%;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: var(--secondary-color);
+  color: var(--white-one);
+  background-size: 40%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(5px);
+}
+
+.stock-card:nth-child(4n) {
+  background-color: var(--primary-color);
+}
+
+.stock-card:nth-child(4n+1) {
+  background-color: var(--primary-color);
+}
+
+.more-btn {
+  color: transparent;
+  border: none;
+  background-color: transparent;
+}
+
+.bi {
+  color: var(--white-one);
+  background-color: transparent;
+  font-size: 2rem;
+}
+
+.stock-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: var(--card-font);
+  align-content: flex-end;
+  align-self: flex-end;
+}
+
+.stock-card-info p:first-child {
+  font-size: calc(0.9 * var(--card-font));
+  margin-bottom: -0.5rem;
+  align-self: flex-end;
+}
+
+.stock-card-info p:last-child {
+  align-self: flex-end;
+  font-size: calc(0.7 * var(--card-font));
+}

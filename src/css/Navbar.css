@@ -1,0 +1,48 @@
+:root {
+  --primary-color: rgb(230, 40, 129);
+  --secondary-color: rgb(207, 37, 117);
+  --white-one: #f5f5f5;
+  --root-font: min(8vw, 10vh);
+  --nav-height: min(10vw, 10vh);
+}
+
+.nav-item-holder {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 3%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  height: 10vw;
+  max-width: 95.89vw;
+}
+
+.title {
+  font-size: var(--root-font);
+  color: var(--white-one);
+}
+
+.back-btn {
+  color: transparent;
+  border: none;
+  background-color: transparent;
+}
+
+.icon-holder {
+  display: flex;
+  gap: 1rem;
+}
+
+.bi {
+  color: var(--white-one);
+  background-color: transparent;
+  font-size: calc(0.5 * var(--root-font));
+  margin-right: 0.5rem;
+}
+
+.bi-arrow-left-circle {
+  font-size: calc(0.8 * var(--root-font));
+  margin-right: 2rem;
+  margin-top: -2rem;
+}
